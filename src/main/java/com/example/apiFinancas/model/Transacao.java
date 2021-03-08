@@ -7,12 +7,13 @@ import java.util.Objects;
 
 @Data
 @Entity
-public class Cliente {
+public class Transacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String nome;
+    private String type;
+    private Double valor;
+    private String data;
 
 }
