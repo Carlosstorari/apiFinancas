@@ -7,13 +7,13 @@ import java.util.Objects;
 
 @Data
 @Entity
-public class Transacao {
+public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String type;
-    private Double valor;
-    private String data;
+    private Double value;
+    private String date;
 
 }
