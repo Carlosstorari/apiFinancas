@@ -19,25 +19,28 @@ public class TransactionController {
     @Autowired
     private TransactionFacade transactionFacade;
 
-//    @GetMapping
-//    public List<TransactionEntity> listTransaction() {
-//        return transactionFacade.list();
-//    }
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping
+    public List<TransactionSaida> listTransaction() {
+        return transactionFacade.list();
+    }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public List<TransactionSaida> addTransaction(@RequestBody List<TransactionEntrada> transactionEntrada) {
+    public TransactionSaida add(@RequestBody TransactionEntrada transactionEntrada) {
         return transactionFacade.register(transactionEntrada);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PutMapping("/update/{id}")
+    public TransactionSaida update(@PathVariable("id") long id, @RequestBody TransactionEntrada transactionEntrada) throws Exception {
+        return transactionFacade.update(id, transactionEntrada);
+    }
 
-//    @PutMapping("/update/{id}")
-//    public TransactionEntity updateTransaction(@PathVariable("id") long id, @RequestBody TransactionEntity transactionEntity) {
-//        return transactionFacade.update(id, transactionEntity);
-//    }
-
-//    @DeleteMapping("/delete/{id}")
-//    public void deleteTransaction(@PathVariable("id") long id) {
-//        transactionFacade.delete(id);
-//    }
+    @CrossOrigin(origins = "http://localhost:3000")
+    @DeleteMapping("/delete/{id}")
+    public String delete(@PathVariable("id") long id) {
+        return transactionFacade.delete(id);
+    }
 }

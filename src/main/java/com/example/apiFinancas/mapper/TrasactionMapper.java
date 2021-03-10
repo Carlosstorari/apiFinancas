@@ -6,13 +6,15 @@ import com.example.apiFinancas.model.TransactionSaida;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper
 public interface TrasactionMapper {
 
     TrasactionMapper mapper = Mappers.getMapper(TrasactionMapper.class);
 
-    TransactionEntity mapToEntity(TransactionEntrada vagaEntrada);
+    TransactionEntity mapToEntity(TransactionEntrada transactionEntrada);
 
-    TransactionSaida mapToSaida(TransactionEntity vagaEntity);
+    TransactionSaida mapToSaida(TransactionEntity transactionEntity);
 
 }

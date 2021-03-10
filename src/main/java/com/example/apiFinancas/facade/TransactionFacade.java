@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Service
@@ -23,39 +25,35 @@ public class TransactionFacade {
 
     TrasactionMapper mapper = Mappers.getMapper(TrasactionMapper.class);
 
-    public List<TransactionSaida> register(List<TransactionEntrada> transactionEntrada){
-        List<TransactionEntity> transactionEntities = new ArrayList<>();
-        List<TransactionSaida> transactionSaidas = new ArrayList<>();
-        for (TransactionEntrada transactionsEntrada : transactionEntrada) {
-            transactionEntities.add(mapper.mapToEntity(transactionsEntrada));
-        }
-
-        transactionEntities = transactionRepository.saveAll(transactionEntities);
-        for (TransactionEntity transactionEntity : transactionEntities) {
-            transactionSaidas.add(mapper.mapToSaida(transactionEntity));
-        }
-        return transactionSaidas;
+    public TransactionSaida register(TransactionEntrada transactionEntrada){
+        return mapper.mapToSaida(transactionRepository.save(mapper.mapToEntity(transactionEntrada)));
     }
 
-//    public List<TransactionEntity> list(){
-//        return transactionRepository.findAll();
-//    }
+    public List<TransactionSaida> list(){
+        List<TransactionEntity> transactionEntityList = transactionRepository.findAll();
+        List<TransactionSaida> transactionSaidaList = new ArrayList<>();
+        for (TransactionEntity transactionEntity : transactionEntityList) {
+            transactionSaidaList.add(mapper.mapToSaida(transactionEntity));
+        }
+        return transactionSaidaList;
+    }
 
-//    public TransactionEntity update(Long id, TransactionEntity transactionEntity){
-//        Optional<TransactionEntity> transactionData = transactionRepository.findById(id);
-//
-//        if (transactionData.isPresent()) {
-//            TransactionEntity _transactionEntity = transactionData.get();
-//            _transactionEntity.setType(transactionEntity.getType());
-//            _transactionEntity.setValue(transactionEntity.getValue());
-//            _transactionEntity.setDate(transactionEntity.getDate());
-//            return transactionRepository.save(_transactionEntity);
-//        }
-//        return transactionEntity;
-//    }
+    public TransactionSaida update(Long id, TransactionEntrada transactionEntrada) throws Exception {
+        Optional<TransactionEntity> transactionData = transactionRepository.findById(id);
+        TransactionEntity _transactionEntity = transactionData.get();
+
+        if (!transactionData.isPresent()) {
+            throw new Exception("Não foi encontrada a transação.");
+        }
+        _transactionEntity.setType(transactionEntrada.getType());
+        _transactionEntity.setValue(transactionEntrada.getValue());
+        _transactionEntity.setDate(transactionEntrada.getDate());
+        return mapper.mapToSaida(transactionRepository.save(_transactionEntity));
+    }
 
 
-//    public void delete(Long id){
-//        transactionRepository.deleteById(id);
-//    }
+    public String delete(Long id){
+        transactionRepository.deleteById(id);
+        return "Transação deletada com sucesso";
+    }
 }
