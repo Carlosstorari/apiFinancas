@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-11-29T22:55:47.872Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="PLpM2GDkeBSDUofJ9D5Y" version="20.6.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-29T23:27:39.615Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="PM6Np59FWR3zH5wtyGK7" version="20.6.0" type="github">
   <diagram id="0dBuIqj76AondTTtISzp" name="Página-1">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -50,7 +50,7 @@
           <mxGeometry y="110" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="n3Wyt3uiERUh9bAAoLCt-29" value="ViewModelNewCard" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="720" y="490" width="380" height="140" as="geometry" />
+          <mxGeometry x="90" y="640" width="380" height="140" as="geometry" />
         </mxCell>
         <mxCell id="n3Wyt3uiERUh9bAAoLCt-30" value="- cardName: String" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-29">
           <mxGeometry y="30" width="130" height="30" as="geometry" />
@@ -68,22 +68,34 @@
           <mxGeometry y="110" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="n3Wyt3uiERUh9bAAoLCt-35" value="ActivityNewCard" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="730" y="680" width="380" height="140" as="geometry" />
+          <mxGeometry x="100" y="830" width="380" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="n3Wyt3uiERUh9bAAoLCt-36" value="- cardName: String" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-35">
+        <mxCell id="n3Wyt3uiERUh9bAAoLCt-53" value="- viewModel: ViewModelNewTag" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-35">
+          <mxGeometry y="30" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="n3Wyt3uiERUh9bAAoLCt-41" value="ViewModelNewTag" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="652" y="640" width="380" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="n3Wyt3uiERUh9bAAoLCt-42" value="- cardName: String" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-41">
           <mxGeometry y="30" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="n3Wyt3uiERUh9bAAoLCt-37" value="- Tags: List&amp;lt;TagName&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-35">
+        <mxCell id="n3Wyt3uiERUh9bAAoLCt-43" value="- Tags: List&amp;lt;TagName&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-41">
           <mxGeometry y="50" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="n3Wyt3uiERUh9bAAoLCt-38" value="+colorCard:TypeManaColor" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-35">
+        <mxCell id="n3Wyt3uiERUh9bAAoLCt-44" value="+colorCard:TypeManaColor" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-41">
           <mxGeometry x="-10" y="70" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="n3Wyt3uiERUh9bAAoLCt-39" value="+incolorManaValue:Int" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-35">
+        <mxCell id="n3Wyt3uiERUh9bAAoLCt-45" value="+incolorManaValue:Int" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-41">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="n3Wyt3uiERUh9bAAoLCt-40" value="+ColorManaValue:Int" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-35">
+        <mxCell id="n3Wyt3uiERUh9bAAoLCt-46" value="+ColorManaValue:Int" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-41">
           <mxGeometry y="110" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="n3Wyt3uiERUh9bAAoLCt-47" value="ActivityNewTag" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="830" width="380" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="n3Wyt3uiERUh9bAAoLCt-48" value="- viewModel: ViewModelNewTag" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="n3Wyt3uiERUh9bAAoLCt-47">
+          <mxGeometry y="30" width="180" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
